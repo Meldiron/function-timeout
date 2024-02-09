@@ -10,6 +10,7 @@ export default async ({ req, res, log, error }) => {
 
   log('Start');
   const response = await databases.listDocuments('main', 'servers', [ Query.limit(100) ]);
+  log(response.documents.length);
   log('Finish');
 
   return res.send('OK');
